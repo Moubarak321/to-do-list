@@ -1,0 +1,52 @@
+def lesnoms():                         # fonction pour entrer les noms 
+    while True:
+        print('Entrez le nom de chaque eleve:')
+        x=input('> ')
+        noms.append(x)
+        if x=='done':
+            break
+
+def lesnotes():                       #fonction pour entrer les notes
+    while True:
+        print('Entrez la note de chaque eleve:')
+        y=input('> ')
+        notes.append(y)
+        if y=='done':
+            break
+
+
+def namenote():           # afficher la note de chaque élève
+    for i in range(len(noms)-1) and range(len(notes)-1):
+        name=noms[i]
+        note=notes[i]
+        print(name,':',note)
+
+def ma_moyenne():       # calcul de la moyenne. le reste du processus reside dans le code principal
+    som_notes=sum(notes)
+    nom_matières=len(notes)
+    moyenne=som_notes/nom_matières
+    return moyenne
+
+#****************************************************************Programme principal debut*****************************************************************************************************************************************************
+
+noms=list()
+notes=list()
+print('Hello Bienvenue dans mon super programme')
+print('Tapez 1 si vous souhaitez connaitre la note de chaque elève \n Tapez 2 si vous souhaitez connaitre la moyenne  des notes \n Tapez 3 si vous souhaitez connaitre leur ecart-type \n Tapez 4 si vous souhaitez connaitre la liste des etudiants ayant une note < 5 \n Tapez 5 si vous souhaitez verifier l enregistrement dun eleve:')
+b=input('> ')
+
+if b=='1':
+    lesnoms()
+    lesnotes()
+    namenote()
+elif b=='2':
+    while True:
+        num = input("ENTREZ VOTRE NOTE DANS CHAQUE MATIERE: ")
+        if num=='done':
+            break
+        x=float(num)
+        notes.append(x)
+        moyenne=ma_moyenne()
+    print('la moyenne des notes est:',moyenne)
+elif c=='3':
+    print('en cours d edition')
